@@ -55,7 +55,7 @@ var showUser = function(user) {
      $collection.append($newThumbnail);
    }
 
-      var onHover = function(event) {
+   var onHover = function(event) {
      $(this).append(buildAlbumOverlay("/album.html"));
    };
 
@@ -64,8 +64,6 @@ var showUser = function(user) {
   };
 
    $collection.find('.collection-album-image-container').hover(onHover, offHover);
-
-   $collection.find('.collection-album-image-container').hover(onHover);
  };
  
 

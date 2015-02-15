@@ -64,8 +64,9 @@
 
     // Toggle the play, pause, and song number based on the button clicked.
    var clickHandler = function(event) {
+    //debugger; // break code at 'debugger'
      var songNumber = $(this).data('song-number');
- 
+
       if (currentlyPlayingSong !== null) {
        // Revert to song number for currently playing song because user started playing new song.
        currentlyPlayingCell = $('.song-number[data-song-number="' + currentlyPlayingSong + '"]');

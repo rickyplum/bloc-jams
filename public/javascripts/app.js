@@ -157,8 +157,9 @@ require.register("scripts/album", function(exports, require, module) {
 
     // Toggle the play, pause, and song number based on the button clicked.
    var clickHandler = function(event) {
+    //debugger; // break code at 'debugger'
      var songNumber = $(this).data('song-number');
- 
+
       if (currentlyPlayingSong !== null) {
        // Revert to song number for currently playing song because user started playing new song.
        currentlyPlayingCell = $('.song-number[data-song-number="' + currentlyPlayingSong + '"]');
@@ -289,7 +290,7 @@ var showUser = function(user) {
      $collection.append($newThumbnail);
    }
 
-      var onHover = function(event) {
+   var onHover = function(event) {
      $(this).append(buildAlbumOverlay("/album.html"));
    };
 
@@ -298,8 +299,6 @@ var showUser = function(user) {
   };
 
    $collection.find('.collection-album-image-container').hover(onHover, offHover);
-
-   $collection.find('.collection-album-image-container').hover(onHover);
  };
  
 
