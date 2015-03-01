@@ -6,9 +6,9 @@ body {
   color: white;
   min-height: 100%;
   background: -webkit-radial-gradient(#2b1339, #380c77);
-  background: radial-gradient(#2b1339, #380c77); 
-    padding-bottom: 150px;
-}
+  background: radial-gradient(#2b1339, #380c77);
+  padding-bottom: 150px;
+   }
 
 body.landing {
   font-family: 'Open Sans';
@@ -17,7 +17,7 @@ body.landing {
   background: -webkit-radial-gradient(#2b1339, #380c77);
   background: radial-gradient(#2b1339, #380c77);
   background: #5b5579; 
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .hero-content {
@@ -325,7 +325,6 @@ td.song-number {
    width: 100px;
    vertical-align: middle;
  }
-
 
 
 /*# sourceMappingURL=app.css.map*/
