@@ -397,9 +397,16 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
 
   blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
   $scope.songPlayer = SongPlayer;
+
+   SongPlayer.onTimeUpdate(function(event, time){
+     $scope.$apply(function(){
+       $scope.playTime = time;
+     });
+   });
+ 
 }]);
  
- blocJams.service('SongPlayer', function() {
+ blocJams.service('SongPlayer', ['$rootScope', function($rootScope) {
   var currentSoundFile = null;
    var trackIndex = function(album, song) {
      return album.songs.indexOf(song);
@@ -446,24 +453,36 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
          currentSoundFile.setTime(time);
        }
      },
+
+     onTimeUpdate: function(callback) {
+      return $rootScope.$on('sound:timeupdate', callback);
+    },
+
      setSong: function(album, song) {
        if (currentSoundFile) {
       currentSoundFile.stop();
     }
        this.currentAlbum = album;
        this.currentSong = song;
+
        currentSoundFile = new buzz.sound(song.audioUrl, {
       formats: [ "mp3" ],
       preload: true
     });
+
+        currentSoundFile.bind('timeupdate', function(e){
+        $rootScope.$broadcast('sound:timeupdate', this.getTime());
+      });
  
     this.play();
      }
 
    };
- });
+ }]);
 
 blocJams.directive('slider', ['$document', function($document){
+
+
 
   // Returns a number between 0 and 1 to determine where the mouse event happened along the slider bar.
    var calculateSliderPercentFromMouseEvent = function($slider, event) {
@@ -489,6 +508,8 @@ blocJams.directive('slider', ['$document', function($document){
      }
    }
 
+
+
   
    
     return {
@@ -498,6 +519,10 @@ blocJams.directive('slider', ['$document', function($document){
      scope: {
       onChange: '&'
     },
+
+
+
+
     link: function(scope, element, attributes) {
        // These values represent the progress into the song/volume bar, and its max value.
        // For now, we're supplying arbitrary initial and max values.
@@ -555,10 +580,43 @@ blocJams.directive('slider', ['$document', function($document){
            scope.onChange({value: newValue});
          }
        };
+
+
  
      }
+
+
    };
  }]);
+
+blocJams.filter('timecode', function(){
+   return function(seconds) {
+     seconds = Number.parseFloat(seconds);
+ 
+     // Returned when no time is provided.
+     if (Number.isNaN(seconds)) {
+       return '-:--';
+     }
+ 
+     // make it a whole number
+     var wholeSeconds = Math.floor(seconds);
+ 
+     var minutes = Math.floor(wholeSeconds / 60);
+ 
+     remainingSeconds = wholeSeconds % 60;
+ 
+     var output = minutes + ':';
+ 
+     // zero pad seconds, so 9 seconds should be :09
+     if (remainingSeconds < 10) {
+       output += '0';
+     }
+ 
+     output += remainingSeconds;
+ 
+     return output;
+   }
+ })
 });
 
 ;require.register("scripts/collection", function(exports, require, module) {
