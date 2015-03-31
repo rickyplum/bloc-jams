@@ -360,6 +360,11 @@ td.song-number {
     margin-right: 30px;
     margin-left: 30px;
     margin-bottom: 40px; }
+  html, body {
+    width: 100%;
+    overflow-x: hidden; }
+  ::-webkit-scrollbar {
+    display: none; }
   .collection-album-container {
     position: relative;
     margin-left: auto;
