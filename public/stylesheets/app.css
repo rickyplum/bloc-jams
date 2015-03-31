@@ -342,6 +342,33 @@ td.song-number {
     .player-header-nav.navbar .landing-album-list .album-cover {
       position: relative;
       left: calc(50% - 200px); }
+  .hero-content h1 {
+    font-size: 70px;
+    margin-bottom: 50px;
+    font-weight: 300;
+    text-align: center; }
+  h3, .h3 {
+    font-size: 24px;
+    text-align: center; }
+  img {
+    vertical-align: middle;
+    max-width: 100%; }
+  .selling-points .point {
+    width: 100% !important;
+    float: left;
+    padding: 0 0.5%; }
+  .selling-points .point h5 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px !important;
+    text-align: center;
+    height: 8px !important; }
+  .selling-points .point p {
+    font-size: 14px;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 40px; }
   .collection-album-container {
     position: relative;
     margin-left: auto;
