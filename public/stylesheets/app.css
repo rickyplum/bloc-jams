@@ -372,6 +372,9 @@ td.song-number {
     width: 250px;
     /* Width of the album image. */ } }
 
+.player-bar .play-controls .previous {
+  margin: 65px !important; }
+
 html {
   height: 100%; }
 
