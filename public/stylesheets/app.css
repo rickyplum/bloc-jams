@@ -324,6 +324,9 @@ td.song-number {
 @media screen and (max-width: 768px) {
   /* Landing Page and Global Styles */
   /* Collection View */
+  .player-bar-control-group {
+    display: block !important;
+    vertical-align: middle; }
   .player-header-nav.navbar .navbar-nav li {
     text-align: center; }
   .player-header-nav.navbar .landing-album-list {
@@ -370,10 +373,27 @@ td.song-number {
     margin-left: auto;
     margin-right: auto;
     width: 250px;
-    /* Width of the album image. */ } }
-
-.player-bar .play-controls .previous {
-  margin: 65px !important; }
+    /* Width of the album image. */ }
+  .player-bar .left-controls {
+    width: 100% !important;
+    text-align: left; }
+  .right-controls {
+    display: none;
+    text-align: right; }
+  .play-controls a {
+    font-size: 20px;
+    vertical-align: middle; }
+  .play-controls .previous {
+    margin-right: 65px; }
+  .play-controls .play-pause {
+    margin-right: 60px;
+    font-size: 30px; }
+  .seek-control {
+    position: relative;
+    width: 140%;
+    margin-top: 60px;
+    margin-left: 0px;
+    align-content: center; } }
 
 html {
   height: 100%; }

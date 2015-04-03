@@ -21,19 +21,14 @@
        </div>
         <h3 class='artist-name'>{{ songPlayer.currentAlbum.artist }} </h3>
      </div>
-     <div class='right-controls player-bar-control-group'>
-      
-       <div class='volume' >
-        <span class="hidden-xs">
+     <div class='hidden-xs right-controls player-bar-control-group'>
+       <div class='hidden-xs volume' >
          <i class='fa' ng-class='volumeClass()'></i>
          <slider value='{{songPlayer.volume}}' max='100' on-change='songPlayer.setVolume(value)'></slider>
-        </span>
        </div>
-       <div class='queue-toggle'>
+       <div class='hidden-xs queue-toggle'>
          <a>
-            <span class="hidden-xs">
            <i class='fa fa-list-ul'></i>
-            </span>
          </a>
        </div>
      </div>
