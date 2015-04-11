@@ -390,7 +390,7 @@ td.song-number {
     font-size: 30px; }
   .seek-control {
     position: relative;
-    width: 140%;
+    width: 200%;
     margin-top: 60px;
     margin-left: 0px;
     align-content: center; } }
@@ -700,6 +700,13 @@ td.song-number {
   display: inline-block;
   width: 100px;
   vertical-align: middle; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: white !important;
+  background-color: white; }
 
 
 /*# sourceMappingURL=app.css.map*/

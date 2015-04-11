@@ -293,6 +293,10 @@ require.register("scripts/album", function(exports, require, module) {
      ]
  };
  
+ angular.module('ui.bootstrap.demo', ['ui.bootstrap']);
+angular.module('ui.bootstrap.demo').controller('CollapseDemoCtrl', function ($scope) {
+  $scope.isCollapsed = true;
+});
 
  
 blocJams = angular.module('BlocJams', ['ui.router']);
@@ -635,6 +639,10 @@ blocJams.filter('timecode', function(){
      return output;
    }
  })
+
+
+
+
 });
 
 ;require.register("scripts/collection", function(exports, require, module) {
