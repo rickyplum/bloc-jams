@@ -75,7 +75,24 @@ h3, .h3 {
     display: none; 
 }
 
+.bs-docs-nav {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 0;
+}
 
+.bs-docs-nav .navbar-header .navbar-toggle {
+
+}
+
+.bs-docs-nav .navbar-toggle .icon-bar {
+  background-color: #563d7c;
+}
+
+.bs-docs-nav .navbar-brand, .bs-docs-nav .navbar-nav>li>a {
+  font-weight: 500;
+  color: #fff;
+}
 
   /* Collection View */
 
