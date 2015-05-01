@@ -94,6 +94,14 @@ h3, .h3 {
   color: #fff;
 }
 
+.card {
+  height: 90%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 90%;
+}
+
   /* Collection View */
 
   .collection-album-container {

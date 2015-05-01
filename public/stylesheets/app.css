@@ -3202,6 +3202,37 @@ Copyright (c) 2015 Daniel Eden
 .selling-points .point p {
   font-size: 14px; }
 
+.card-container {
+  cursor: pointer;
+  height: 324px;
+  perspective: 600;
+  position: relative; }
+
+.card {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 100%; }
+
+.card:hover {
+  transform: rotateY(180deg); }
+
+.card .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%; }
+
+.card .back {
+  background: #eaeaed;
+  color: #0087cc;
+  line-height: 150px;
+  text-align: center;
+  transform: rotateY(180deg); }
+
 .album-header-container {
   margin-top: 55px;
   margin-bottom: 40px; }
@@ -3558,6 +3589,12 @@ td.song-number {
   .bs-docs-nav .navbar-brand, .bs-docs-nav .navbar-nav > li > a {
     font-weight: 500;
     color: white; }
+  .card {
+    height: 90%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    width: 90%; }
   .collection-album-container {
     position: relative;
     margin-left: auto;
@@ -3897,6 +3934,10 @@ body {
   line-height: 1.42857;
   color: white !important;
   background-color: white; }
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent !important; }
 
 
 /*# sourceMappingURL=app.css.map*/
